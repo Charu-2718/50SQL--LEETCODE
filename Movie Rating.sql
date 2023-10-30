@@ -17,7 +17,7 @@ select * from
             select movie_id, avg(rating) as avg_rating from movierating 
             where created_at >= '2020-02-01' and created_at <= '2020-02-28' 
             group by movie_id
-        ) as sq 
+        )as sq 
         on m.movie_id = sq.movie_id 
     order by sq.avg_rating desc, m.title limit 1) 
 as movie_query
